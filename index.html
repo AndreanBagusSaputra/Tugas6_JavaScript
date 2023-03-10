@@ -1,5 +1,35 @@
 <script>
     let pengawai = "Andrean";
-    let jabatan = 'Manager';
+    let jabatan = 'Asisten Manager';
     let status = 'Bebas';
+
+    let gaji_pokok = 0;
+    switch(jabatan){
+        case 'Manager': gaji_pokok = 10000000 ; break;
+        case 'Asisten Manager': gaji_pokok = 8000000 ; break;
+        case 'Staff': gaji_pokok = 5000000 ; break ;
+        default : gaji_pokok = 0;
+    }
+
+    let tunjangan_jabatan = 0.1 * gaji_pokok;
+    let bpjs = 0.1 * gaji_pokok;
+
+    let tunjangan_keluarga = 0;
+    switch(status){
+        case 'Menikah': tunjangan_keluarga = 0.1 * gaji_pokok ; break ;
+        default : tunjangan_keluarga = 0;
+    }
+
+    let total_penghasilan = gaji_pokok + tunjangan_jabatan + bpjs + tunjangan_keluarga;
+
+    document.write(
+    "Nama Pengawai: " + pengawai +
+    "<br> Jabatan: " + jabatan +
+    "<br> Stutus: " + status +
+    "<br> <hr> Gaji Pokok: " + gaji_pokok + 
+    "<br> Tunjangan Jabatan: " + tunjangan_jabatan +
+    "<br> BPJS: " + bpjs +
+    "<br> Tunjangan Keluarga: " + tunjangan_keluarga +
+    "<br> Total Penghasilan: " + total_penghasilan
+    );
 </script>
